@@ -1,0 +1,78 @@
+html {
+    background-color: #EDEDED;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+a.selected {
+    text-decoration: underline;
+}
+
+header {
+    background-color: rgba(142, 143, 145, 0.349);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+header p {
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+menu {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+menu a {
+    font-size: 1.5em;
+    margin: 0 1em;
+}
+
+main {
+    padding-left: 5%;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.song {
+    display: flex;
+}
+
+.song .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.song .info .play-and-title {
+    display: flex;
+}
+
+img.icon {
+    width: 2em;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
