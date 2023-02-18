@@ -10,6 +10,14 @@ var wavesurfer = WaveSurfer.create({
 
 wavesurfer.load('../resources/songs/audio.mp3');
 
-wavesurfer.on('ready', function () {
+$('#play-btn').on('click', function() {
     wavesurfer.play();
-});
+    $('#play-btn').hide();
+    $('#pause-btn').show();
+  });
+
+  $('#pause-btn').on('click', function() {
+    wavesurfer.pause();
+    $('#pause-btn').hide();
+    $('#play-btn').show();
+  });

@@ -25,14 +25,15 @@
         <div class="song-collection">
             <div class="song">
                 <div class="info">
-                    <img src="resources/icons/play.svg" class="icon play" alt="icon play">
+                    <img src="resources/icons/play.svg" class="icon play" id="play-btn" alt="icon play">
+                    <img src="resources/icons/pause.svg" class="icon play" id="pause-btn" alt="icon play" style="display: none;">
                     <p>Titre</p>
                 </div>
                 <div class="songMain">
                     <img src="resources/icons/sub.svg" class="icon twitch" alt="icon sub">
                     <div class="song-wave" id="waveform"></div>
                     <div class="download">
-                        <img src="resources/icons/downlaod.svg" class="icon download" alt="icon download">
+                        <img src="resources/icons/download.svg" class="icon download" alt="icon download">
                         <p>723 fois<br>téléchargé</p>
                     </div>
                 </div>
@@ -42,6 +43,7 @@
     <footer>© 2023 by K1000 prod</footer>
 
     <script src="js/libs/wavesurfer.js"></script>
+    <script src="js/libs/jquery-3.6.3.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
