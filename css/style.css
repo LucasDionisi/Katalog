@@ -76,17 +76,28 @@ h2 {
 
 .song {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 4em;
 }
 
 .song .info {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    margin-left: 6em; /* 4em pour l'icon twitch + 2 pour la marge du songwave */
 }
 
-.song .info * {
-    margin: .25em 0;
+.song .info .icon.play {
+    width: 2em;
+}
+
+.song .info p {
+    margin-left: .5em;
+    font-size: 1.25em;
+}
+
+.songMain {
+    display: flex;
+    align-items: center;
 }
 
 .song-wave {
@@ -106,19 +117,22 @@ img.icon {
     align-items: center;
 }
 
-.song .download p {
-    margin: 0;
+.song img.icon.download {
+    margin: 0 0 1em 0;
+    width: 2em;
 }
 
-img.icon.download {
-    margin: 0 0 .5em 0;
-    width: 2.5em;
+.song .download p {
+    margin: 0;
+    font-size: .9em;
+    text-align: center;
+    color: rgb(48, 48, 48);
 }
 
 img.icon.twitch {
     width: 4em;
-    margin-right: 1em;
     cursor: auto;
+    margin: 0;
 }
 
 footer {

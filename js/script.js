@@ -1,9 +1,11 @@
 var wavesurfer = WaveSurfer.create({
-    barWidth: 2,
+    barWidth: 5.5,
+    barRadius: 5,
     container: '#waveform',
-    progressColor: '#0a3e66',
+    normalize: true,
+    progressColor: '#55595f',
     responsive: true,
-    waveColor: '#0f6fb8'
+    waveColor: '#000d23'
 });
 
 wavesurfer.load('../resources/songs/audio.mp3');
