@@ -1,5 +1,24 @@
+/* font : pas loin de Banhshift -> classique */
+
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url('/fonts/font.ttf') format('truetype');
+}
+
+:root {
+    --main-font-color-white: rgba(255, 255, 255, 1);
+    --main-bg-color: rgba(232, 232, 232, 1);
+    --main-pagination-bg-color: rgba(202, 202, 202, 1);
+    --second-pagination-bg-color: rgba(167, 185, 202, 1);
+    --overlay-bg-color: rgba(37, 58, 88, .5);
+    --second-bg-color: rgba(242, 242, 242, 1);
+
+    --main-font: 'Bahnschrift';
+}
+
 html {
     background-color: #EDEDED;
+    font-family: var(--main-font);
 }
 
 body {
