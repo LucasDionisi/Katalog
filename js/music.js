@@ -36,6 +36,7 @@ class Music {
 
     const song = document.createElement('div');
     song.classList.add('song', this.elementId);
+    song.classList.add('song', this.type);
 
     const info = document.createElement('div');
     info.classList.add('info');
@@ -119,5 +120,3 @@ class Music {
     document.body.removeChild(link);
   }
 }
-
-const music = new Music('waveform', '../resources/songs/audio.mp3');
