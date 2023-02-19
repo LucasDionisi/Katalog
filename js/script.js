@@ -2,7 +2,7 @@ const musicsList = [
     {
         elementId: 'MoneyDzy',
         url: '../resources/songs/audio.mp3',
-        type: Type.Subscriber,
+        type: Type.Donation,
         title: 'Money Dzydzy'
     }
 ];
