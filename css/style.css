@@ -84,7 +84,7 @@ h2 {
 .song .info {
     display: flex;
     align-items: center;
-    margin-left: 6em; /* 4em pour l'icon twitch + 2 pour la marge du songwave */
+    margin-left: 8em; /* 6em pour l'icon twitch + 2em pour la marge du songwave */
 }
 
 .song .info .icon.play {
@@ -131,7 +131,7 @@ img.icon {
 }
 
 img.icon.twitch {
-    width: 4em;
+    width: 6em;
     cursor: auto;
     margin: 0;
 }
