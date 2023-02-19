@@ -7,7 +7,6 @@ const musicsList = [
     }
 ];
 
-
 musicsList.forEach((music) => {
     new Music(music.elementId, music.url, music.type, music.title);
 });
