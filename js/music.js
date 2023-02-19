@@ -1,7 +1,17 @@
 class Music {
-  constructor(pElementId, pAudioUrl) {
+  /**
+   * pElementId: HTML ID
+   * pAudioUrl: URL de la musique
+   * pType: Sub, Follow, ...
+   * pTitle: Tire de la muisque
+  */
+  constructor(pElementId, pAudioUrl, pType, pTitle) {
     this.elementId = pElementId;
     this.audioUrl = pAudioUrl;
+    this.type = pType;
+    this.title = pTitle;
+
+    this.createHtml();
 
     this.wavesurfer = WaveSurfer.create({
       barWidth: 5.5,
@@ -19,6 +29,71 @@ class Music {
     $(`.${this.elementId} #play-btn`).on('click', () => this.onBtnPlay());
     $(`.${this.elementId} #pause-btn`).on('click', () => this.onBtnPause());
     $(`.${this.elementId} #download-btn`).on('click', () => this.onBtnDownload());
+  }
+
+  createHtml() {
+    const songCollection = document.querySelector('.song-collection');
+
+    const song = document.createElement('div');
+    song.classList.add('song', this.elementId);
+
+    const info = document.createElement('div');
+    info.classList.add('info');
+
+    const playIcon = document.createElement('img');
+    playIcon.src = 'resources/icons/play.svg';
+    playIcon.classList.add('icon', 'play');
+    playIcon.id = `play-btn`;
+    playIcon.alt = 'icon play';
+    info.appendChild(playIcon);
+
+    const pauseIcon = document.createElement('img');
+    pauseIcon.src = 'resources/icons/pause.svg';
+    pauseIcon.classList.add('icon', 'play');
+    pauseIcon.id = `pause-btn`;
+    pauseIcon.alt = 'icon pause';
+    pauseIcon.style.display = 'none';
+    info.appendChild(pauseIcon);
+
+    const songName = document.createElement('p');
+    songName.textContent = this.title;
+    info.appendChild(songName);
+
+    song.appendChild(info);
+
+    const songMain = document.createElement('div');
+    songMain.classList.add('songMain');
+
+    const subIcon = document.createElement('img');
+    subIcon.src = 'resources/icons/sub.svg';
+    subIcon.classList.add('icon', 'twitch');
+    subIcon.alt = 'icon sub';
+    songMain.appendChild(subIcon);
+
+    const songWave = document.createElement('div');
+    songWave.classList.add('song-wave');
+    songWave.id = this.elementId;
+    songMain.appendChild(songWave);
+
+    const downloadDiv = document.createElement('div');
+    downloadDiv.classList.add('download');
+
+    const downloadIcon = document.createElement('img');
+    downloadIcon.src = 'resources/icons/download.svg';
+    downloadIcon.classList.add('icon', 'download');
+    downloadIcon.id = `download-btn`;
+    downloadIcon.alt = 'icon download';
+    downloadDiv.appendChild(downloadIcon);
+
+    const downloadText = document.createElement('p');
+    downloadText.innerHTML = `${Math.floor(Math.random() * 1000)} fois<br>téléchargé`;
+    downloadDiv.appendChild(downloadText);
+
+    songMain.appendChild(downloadDiv);
+    song.appendChild(songMain);
+
+    songCollection.appendChild(song);
+
   }
 
   onBtnPlay() {
