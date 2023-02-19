@@ -66,7 +66,7 @@ class Music {
     songMain.classList.add('songMain');
 
     const subIcon = document.createElement('img');
-    subIcon.src = 'resources/icons/sub.svg';
+    subIcon.src = `resources/icons/${this.type}.svg`;
     subIcon.classList.add('icon', 'twitch');
     subIcon.alt = 'icon sub';
     songMain.appendChild(subIcon);
