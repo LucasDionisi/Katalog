@@ -1,1 +1,5 @@
+# vscode
+/.vscode
+
+# Do not flood with mp3 files
 /resources/songs/*
