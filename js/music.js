@@ -88,10 +88,6 @@ class Music {
     downloadIcon.alt = 'icon download';
     downloadDiv.appendChild(downloadIcon);
 
-    // const downloadText = document.createElement('p');
-    // downloadText.innerHTML = `${Math.floor(Math.random() * 1000)} fois<br>téléchargé`;
-    // downloadDiv.appendChild(downloadText);
-
     const downloadText = document.createElement('p');
     downloadText.innerHTML = 'Télécharger';
     downloadDiv.appendChild(downloadText);
