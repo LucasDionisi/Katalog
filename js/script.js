@@ -61,3 +61,7 @@ $('menu a').on('click', function () {
         songsSelected[i].classList.add('display');
     }
 });
+
+$('footer .paypal').on('click', function() {
+    window.open('https://music.k1000prod.fr', '_blank');
+});
