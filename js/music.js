@@ -17,6 +17,7 @@ class Music {
       barWidth: 5.5,
       barRadius: 5,
       container: `#${this.elementId}`,
+      height: window.screen.width <= 768 ? 64 : 128,
       normalize: true,
       progressColor: '#55595f',
       responsive: true,
@@ -24,7 +25,6 @@ class Music {
     });
 
     this.wavesurfer.load(pAudioUrl);
-
 
     $(`.${this.elementId} #play-btn`).on('click', () => this.onBtnPlay());
     $(`.${this.elementId} #pause-btn`).on('click', () => this.onBtnPause());
@@ -88,8 +88,12 @@ class Music {
     downloadIcon.alt = 'icon download';
     downloadDiv.appendChild(downloadIcon);
 
+    // const downloadText = document.createElement('p');
+    // downloadText.innerHTML = `${Math.floor(Math.random() * 1000)} fois<br>téléchargé`;
+    // downloadDiv.appendChild(downloadText);
+
     const downloadText = document.createElement('p');
-    downloadText.innerHTML = `${Math.floor(Math.random() * 1000)} fois<br>téléchargé`;
+    downloadText.innerHTML = 'Télécharger';
     downloadDiv.appendChild(downloadText);
 
     songMain.appendChild(downloadDiv);

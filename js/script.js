@@ -37,11 +37,19 @@ const musicsList = [
     }
 ];
 
+var musics = [];
+
 musicsList.forEach((music) => {
-    new Music(music.elementId, music.url, music.type, music.title);
+    musics.push(new Music(music.elementId, music.url, music.type, music.title));
 });
 
+
+// MENU
 $('menu a').on('click', function () {
+    musics.forEach((music) => {
+        music.onBtnPause();
+    });
+
     const lType = this.dataset.type;
     try {
         $('menu a.selected')[0].classList.remove('selected');
@@ -62,6 +70,9 @@ $('menu a').on('click', function () {
     }
 });
 
-$('footer .paypal').on('click', function() {
+$('footer .paypal').on('click', goToPaypal);
+$('.pre-songs .paypal').on('click', goToPaypal);
+
+function goToPaypal() {
     window.open('https://music.k1000prod.fr', '_blank');
-});
+}
