@@ -61,7 +61,6 @@ menu {
     display: flex;
     justify-content: center;
     padding: 1em 0;
-    margin-top: 2em;
     margin-bottom: 5em;
 }
 
@@ -81,9 +80,13 @@ h2 {
 }
 
 .song {
-    display: flex;
+    display: none;
     flex-direction: column;
     margin-bottom: 4em;
+}
+
+.song.display {
+    display: flex;
 }
 
 .song .info {

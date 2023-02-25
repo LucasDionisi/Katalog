@@ -37,6 +37,8 @@ class Music {
     const song = document.createElement('div');
     song.classList.add('song', this.elementId);
     song.classList.add('song', this.type);
+    song.classList.add('song', Type.All);
+    song.classList.add('song', 'display');
 
     const info = document.createElement('div');
     info.classList.add('info');

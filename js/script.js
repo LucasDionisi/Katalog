@@ -50,4 +50,14 @@ $('menu a').on('click', function () {
     }
     
     this.classList.add('selected');
+
+    const allSongs = $('.song.all');
+    for (var i = 0; i < allSongs.length; i++) {
+        allSongs[i].classList.remove('display');
+    }
+
+    const songsSelected = $(`.song.${lType}`);
+    for (var i = 0; i < songsSelected.length; i++) {
+        songsSelected[i].classList.add('display');
+    }
 });
