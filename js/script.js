@@ -40,3 +40,14 @@ const musicsList = [
 musicsList.forEach((music) => {
     new Music(music.elementId, music.url, music.type, music.title);
 });
+
+$('menu a').on('click', function () {
+    const lType = this.dataset.type;
+    try {
+        $('menu a.selected')[0].classList.remove('selected');
+    } catch (e) {
+        console.warn(`Impossible to unselect an element: ${e}`);
+    }
+    
+    this.classList.add('selected');
+});

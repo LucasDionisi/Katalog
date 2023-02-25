@@ -1,4 +1,5 @@
 const Type = {
+    All: 'all',
     Follow: 'follow',
     Subscriber: 'subscriber',
     Donation: 'donation',

@@ -36,10 +36,10 @@ a {
 
 a.selected {
     text-decoration: underline;
+    font-weight: 700;
 }
 
 header {
-    /* background-color: rgba(142, 143, 145, 0.349); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,6 +61,8 @@ menu {
     display: flex;
     justify-content: center;
     padding: 1em 0;
+    margin-top: 2em;
+    margin-bottom: 5em;
 }
 
 menu a {
@@ -146,4 +148,5 @@ img.icon {
 footer {
     display: flex;
     justify-content: center;
+    margin: 2em 0;
 }
