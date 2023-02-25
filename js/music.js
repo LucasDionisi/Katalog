@@ -41,6 +41,12 @@ class Music {
     const info = document.createElement('div');
     info.classList.add('info');
 
+    const subIcon = document.createElement('img');
+    subIcon.src = `resources/icons/${this.type}.svg`;
+    subIcon.classList.add('icon', 'twitch');
+    subIcon.alt = 'icon sub';
+    info.appendChild(subIcon);
+
     const playIcon = document.createElement('img');
     playIcon.src = 'resources/icons/play.svg';
     playIcon.classList.add('icon', 'play');
@@ -64,12 +70,6 @@ class Music {
 
     const songMain = document.createElement('div');
     songMain.classList.add('songMain');
-
-    const subIcon = document.createElement('img');
-    subIcon.src = `resources/icons/${this.type}.svg`;
-    subIcon.classList.add('icon', 'twitch');
-    subIcon.alt = 'icon sub';
-    songMain.appendChild(subIcon);
 
     const songWave = document.createElement('div');
     songWave.classList.add('song-wave');

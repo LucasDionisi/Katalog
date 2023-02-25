@@ -39,7 +39,7 @@ a.selected {
 }
 
 header {
-    background-color: rgba(142, 143, 145, 0.349);
+    /* background-color: rgba(142, 143, 145, 0.349); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,11 +48,13 @@ header {
 
 header h1 {
     font-size: 3em;
+    font-weight: 900;
 }
 
 header p {
     font-style: italic;
     font-size: 1.1em;
+    margin: 0;
 }
 
 menu {
@@ -66,33 +68,38 @@ menu a {
     margin: 0 1em;
 }
 
-main {
-    padding-left: 5%;
-}
-
 h2 {
     font-size: 2em;
+}
+
+.song-collection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .song {
     display: flex;
     flex-direction: column;
     margin-bottom: 4em;
-    margin-left: 2em;
 }
 
 .song .info {
     display: flex;
-    align-items: center;
-    margin-left: 8em; /* 6em pour l'icon twitch + 2em pour la marge du songwave */
+    align-items: flex-end;
+}
+
+.song .info *:not(.twitch) {
+    margin-bottom: .5em;
 }
 
 .song .info .icon.play {
     width: 2em;
+    margin-left: 2em;
 }
 
 .song .info p {
-    margin-left: .5em;
+    margin: 0;
     font-size: 1.25em;
 }
 
@@ -103,7 +110,7 @@ h2 {
 
 .song-wave {
     width: 40em;
-    margin: 0 2em;
+    margin-right: 2em;
 }
 
 img.icon {
@@ -130,8 +137,8 @@ img.icon {
     color: rgb(48, 48, 48);
 }
 
-img.icon.twitch {
-    width: 6em;
+.song img.icon.twitch {
+    width: 4em;
     cursor: auto;
     margin: 0;
 }
