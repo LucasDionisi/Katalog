@@ -11,6 +11,8 @@ class Music {
     this.type = pType;
     this.title = pTitle;
 
+    this.colors = this.getColors();
+
     this.createHtml();
 
     this.wavesurfer = WaveSurfer.create({
@@ -19,9 +21,9 @@ class Music {
       container: `#${this.elementId}`,
       height: window.screen.width <= 768 ? 64 : 128,
       normalize: true,
-      progressColor: '#55595f',
+      progressColor: this.colors.progressColor,
       responsive: true,
-      waveColor: '#000d23'
+      waveColor: this.colors.waveColor
     });
 
     this.wavesurfer.load(pAudioUrl);
@@ -29,6 +31,40 @@ class Music {
     $(`.${this.elementId} #play-btn`).on('click', () => this.onBtnPlay());
     $(`.${this.elementId} #pause-btn`).on('click', () => this.onBtnPause());
     $(`.${this.elementId} #download-btn`).on('click', () => this.onBtnDownload());
+  }
+
+  getColors() {
+    var colors = {};
+
+    switch (this.type) {
+      case Type.Follow:
+        colors.progressColor = '#500080';
+        break;
+      case Type.Subscriber:
+        colors.progressColor = '#d49f00';
+        break;
+      case Type.Donation:
+        colors.progressColor = '#2f5b39';
+        break;
+      case Type.Bit:
+        colors.progressColor = '#00c7a9';
+        break;
+      case Type.Raid:
+        colors.progressColor = '#800000';
+        break;
+      case Type.Ban:
+        colors.progressColor = '#0000ad';
+        break;
+
+      default:
+        colors.progressColor = '#252326';
+        break;
+    }
+
+    
+    colors.waveColor = '#444145';
+
+    return colors;
   }
 
   createHtml() {
