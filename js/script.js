@@ -50,9 +50,24 @@ const musicsList = [
     { elementId: 'Soul_Hop', url: '../resources/songs/Theme/Soul_Hop.mp3', type: Type.Theme, title: 'Soul Hop'},
     { elementId: 'SynthWave_Rock', url: '../resources/songs/Theme/SynthWave_Rock.mp3', type: Type.Theme, title: 'SynthWave Rock'},
     { elementId: 'Trip_Hop_Funk', url: '../resources/songs/Theme/Trip_Hop_Funk.mp3', type: Type.Theme, title: 'Trip Hop Funk'},
-    { elementId: 'Trip_Hop', url: '../resources/songs/Theme/Trip_Hop.mp3', type: Type.Theme, title: 'Trip Hop'},
+    { elementId: 'Trip_Hop', url: '../resources/songs/Theme/Trip_Hop.mp3', type: Type.Theme, title: 'Trip Hop'}
     ]   
     ;
+
+// Fonction pour mélanger le tableau
+function shuffle(array) {
+    // Parcours du tableau depuis la fin jusqu'au début
+    for (let i = array.length - 1; i > 0; i--) {
+      // Génère un index aléatoire entre 0 et i
+      const j = Math.floor(Math.random() * (i + 1));
+      // Échange l'élément i avec l'élément j
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    // Retourne le tableau mélangé
+    return array;
+}
+
+shuffle(musicsList);
 
 var musics = [];
 
