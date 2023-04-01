@@ -55,6 +55,9 @@ class Music {
       case Type.Ban:
         colors.progressColor = '#0000ad';
         break;
+      case Type.Theme:
+        colors.progressColor = '#F7578A';
+        break;
 
       default:
         colors.progressColor = '#252326';
@@ -136,6 +139,9 @@ class Music {
   }
 
   onBtnPlay() {
+    musics.forEach((music) => {
+      music.onBtnPause();
+  });
     this.wavesurfer.play();
     $(`.${this.elementId} #play-btn`).hide();
     $(`.${this.elementId} #pause-btn`).show();
@@ -151,7 +157,7 @@ class Music {
     // Lorsque le bouton est cliqué, on crée un élément a avec un lien vers le fichier audio.mp3
     var link = document.createElement('a');
     link.href = this.audioUrl;
-    link.download = 'audio.mp3';
+    link.download = '' + this.elementId + '.mp3';
     // On ajoute cet élément a au DOM et on déclenche son clic pour lancer le téléchargement
     document.body.appendChild(link);
     link.click();

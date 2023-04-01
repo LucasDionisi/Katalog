@@ -5,5 +5,6 @@ const Type = {
     Donation: 'donation',
     Bit: 'bit',
     Raid: 'raid',
-    Ban: 'ban' 
+    Ban: 'ban',
+    Theme: 'Theme'
 }
