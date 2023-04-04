@@ -79,6 +79,13 @@ h2 {
 .pre-songs {
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pre-songs .contact {
+    color: #0073a8;
+    font-size: 1.2em;
 }
 
 .song-collection {
@@ -204,9 +211,9 @@ footer{
         margin-bottom: 2.5em;
     }
     
-    .pre-songs {
+    /* .pre-songs {
         display: none;
-    }
+    } */
 
     .song-wave {
         width: 12em;
